@@ -31,10 +31,20 @@ Extra-Source-Files:     src/Language/Java/Paragon/Lexer.x
 Flag base4
 
 Library
-  Build-Tools:          alex >= 2.3
-  Build-Depends:        array >= 0.1, pretty >= 1.0, cpphs >= 1.3, parsec >= 2.1 && < 3, containers, transformers,
-                        uniplate == 1.6.1, template-haskell >= 2.7 && < 3, directory, filepath, bytestring,
-                        flowlocks-framework
+  Build-Tools:        alex
+  build-depends:      transformers
+                    , bytestring
+                    , directory
+                    , filepath
+                    , array
+                    , parsec
+                    , uniplate
+                    , base
+                    , syb
+                    , pretty
+                    , template-haskell
+                    , containers
+                    , flowlocks-framework
 -- Package used for debug printout. Remove for production build:
                         , haskell-src-exts
   if flag(base4)
@@ -122,10 +132,20 @@ Executable parac
                         Language.Java.Paragon.PolicyLang.Policy
 
 
-  Build-Tools:          alex >= 2.3
-  Build-Depends:        array >= 0.1, pretty >= 1.0, cpphs >= 1.3, parsec >= 2.1 && < 3, containers, transformers, 
-                        uniplate == 1.6.1, directory, filepath, template-haskell >= 2.7 && < 3, bytestring,
-                        flowlocks-framework
+  Build-Tools:        alex
+  build-depends:      transformers
+                    , bytestring
+                    , directory
+                    , filepath
+                    , array
+                    , parsec
+                    , uniplate
+                    , base
+                    , syb
+                    , pretty
+                    , template-haskell
+                    , containers
+                    , flowlocks-framework
 -- Package used for debug printout. Remove for production build:
                         , haskell-src-exts
   if flag(base4)

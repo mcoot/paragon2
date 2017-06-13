@@ -66,10 +66,11 @@ import Data.Data
 import Data.Generics (Data(..),Typeable(..))
 #endif
 
+{-
 instance Applicative (GenParser s a) where
     pure  = return
     (<*>) = ap
-
+-}
 -- import Debug.Trace (trace)
 
 parserModule :: String

@@ -27,7 +27,7 @@ import System.Directory (doesFileExist,doesDirectoryExist,getDirectoryContents)
 import qualified Data.ByteString.Char8 as B
 import Data.Char (toLower)
 
-import Control.Monad (liftM, filterM)
+import Control.Monad (liftM, filterM, ap)
 import Control.Applicative
 import Control.Arrow (second)
 
@@ -55,6 +55,10 @@ instance Monad (PiReader) where
 
   fail = liftBase . fail
 
+instance Applicative PiReader where
+  pure = return
+  (<*>) = ap
+  
 instance Functor (PiReader) where
   fmap = liftM
 
